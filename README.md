@@ -4,7 +4,7 @@ Assistente educacional para aprender conceitos sobre investimentos no Brasil. Es
 
 ## Etapa atual
 
-Na Aula 1, o projeto tem uma conversa inicial pelo terminal. O FinBot responde a perguntas gerais sobre investimentos e mantém o histórico durante a conversa.
+Na Aula 2, o FinBot ganhou uma API em FastAPI, uma tela de chat em Streamlit e rastreamento das conversas no Langfuse. A API é publicada no Render e o front no Streamlit Community Cloud. O histórico de cada sessão ainda fica na memória da API e se perde quando ela reinicia.
 
 ## Requisitos
 
@@ -22,17 +22,29 @@ pip install -r requirements-dev.txt
 Copy-Item .env.example .env
 ```
 
-Depois, abra o arquivo `.env` no VS Code e preencha `GROQ_API_KEY` com sua chave da Groq. Não compartilhe essa chave e não a coloque neste README.
+Depois, abra o arquivo `.env` no VS Code e preencha `GROQ_API_KEY` com sua chave da Groq. Para registrar as conversas no Langfuse, preencha também `LANGFUSE_PUBLIC_KEY` e `LANGFUSE_SECRET_KEY`. Não compartilhe essas chaves e não as coloque neste README.
+
+Para o front, instale também:
+
+```powershell
+pip install -r frontend/requirements.txt
+```
 
 ## Como executar
 
-Com o ambiente virtual ativado e o `.env` configurado, rode no terminal integrado:
+Com o ambiente virtual ativado e o `.env` configurado, suba a API em um terminal:
 
 ```powershell
-python -m scripts.chat_terminal
+uvicorn app.main:app --reload
 ```
 
-Digite `sair` para encerrar a conversa.
+A documentação interativa fica em http://127.0.0.1:8000/docs. Em **outro** terminal (com o ambiente ativado), abra o front:
+
+```powershell
+streamlit run frontend/streamlit_app.py
+```
+
+O chat da Aula 1 continua disponível no terminal com `python -m scripts.chat_terminal` (digite `sair` para encerrar).
 
 ## Como executar os testes
 
@@ -48,4 +60,4 @@ O arquivo `.env` contém chaves privadas e não deve ser enviado ao GitHub. O ar
 
 ## Próximas etapas
 
-Este projeto será ampliado nas aulas seguintes. O link do aplicativo publicado será acrescentado aqui quando ele estiver disponível.
+Na Aula 3, a memória das conversas vai para o MongoDB e os prompts passam a ser versionados no Langfuse.
