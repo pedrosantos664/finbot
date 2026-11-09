@@ -6,7 +6,7 @@ Assistente educacional para aprender conceitos sobre investimentos no Brasil. Es
 
 | O quê | Link |
 |---|---|
-| Chat publicado (Streamlit Cloud) | https://api-springboot-hhhzm9th9mkr8sc62uynvp.streamlit.app |
+| Chat publicado (Streamlit Cloud) | https://finbot-pedrosantos.streamlit.app |
 | API publicada (Render) | https://finbot-api-weul.onrender.com |
 | Documentação da API | https://finbot-api-weul.onrender.com/docs |
 
