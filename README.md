@@ -2,6 +2,16 @@
 
 Assistente educacional para aprender conceitos sobre investimentos no Brasil. Este projeto está sendo desenvolvido passo a passo como parte das aulas.
 
+## Links do projeto
+
+| O quê | Link |
+|---|---|
+| Chat publicado (Streamlit Cloud) | https://api-springboot-hhhzm9th9mkr8sc62uynvp.streamlit.app |
+| API publicada (Render) | https://finbot-api-weul.onrender.com |
+| Documentação da API | https://finbot-api-weul.onrender.com/docs |
+
+No plano gratuito, a API "dorme" depois de um tempo sem uso: a primeira pergunta pode demorar cerca de 1 minuto.
+
 ## Etapa atual
 
 Na Aula 2, o FinBot ganhou uma API em FastAPI, uma tela de chat em Streamlit e rastreamento das conversas no Langfuse. A API é publicada no Render e o front no Streamlit Community Cloud. O histórico de cada sessão ainda fica na memória da API e se perde quando ela reinicia.
